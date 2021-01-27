@@ -1,0 +1,15 @@
+// ============ Header Css =============
+
+.header {
+    /*
+    1.Display
+    2.Spacing Between Element
+    3. Padding
+    4. Font Size
+    5. Background
+    6. Color
+    7. Hover Background
+    8. Hover Color
+    */
+    @include ul(inline-block, 30px, 1rem, 12px, #ccc, #000, #333, #eee);
+}

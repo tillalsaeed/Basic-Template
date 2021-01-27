@@ -1,0 +1,146 @@
+/*==================
+    Color and Bg
+===================*/
+$color-list: (white: $white,
+    black: $black,
+    grey : $grey,
+    pink : $pink);
+
+
+@each $key,
+$val in $color-list {
+    .txt-#{$key} {
+        color: #{$val};
+    }
+
+    .bg-#{$key} {
+        background: #{$val};
+    }
+}
+
+/*==================
+    Font Size
+===================*/
+
+$font-size: (10 : 10,
+    12 : 1.2,
+    14 : 1.4,
+    16 : 1.6,
+    18 : 1.8,
+    24 : 2.4,
+    30 : 3.0,
+    32 : 3.2,
+    36 : 3.6,
+);
+
+@each $key,
+$val in $font-size {
+
+    .f-#{$key} {
+        font-size: #{$val}rem;
+    }
+}
+
+
+/*===================
+    Spacing Snippet
+===================*/
+$spacing: (5 : .5,
+    10 : 1,
+    15 : 1.5,
+    20 : 2,
+    25 : 2.5,
+    30 : 3,
+    35 : 3.5,
+    50 : 5);
+
+@each $key,
+$val in $spacing {
+    .mt-#{$key} {
+        margin-top: #{$val}rem;
+    }
+
+    .mb-#{$key} {
+        margin-bottom: #{$val}rem;
+    }
+
+    .ml-#{$key} {
+        margin-left: #{$val}rem;
+    }
+
+    .mr-#{$key} {
+        margin-right: #{$val}rem;
+    }
+
+    .my-#{$key} {
+        margin-top: #{$val}rem;
+        margin-bottom: #{$val}rem;
+    }
+
+    .mx-#{$key} {
+        margin-left: #{$val}rem;
+        margin-right: #{$val}rem;
+    }
+
+    .pt-#{$key} {
+        padding-top: #{$val}rem;
+    }
+
+    .pb-#{$key} {
+        padding-bottom: #{$val}rem;
+    }
+
+    .pl-#{$key} {
+        padding-left: #{$val}rem;
+    }
+
+    .pr-#{$key} {
+        padding-right: #{$val}rem;
+    }
+
+    .py-#{$key} {
+        padding-top: #{$val}rem;
+        padding-bottom: #{$val}rem;
+    }
+
+    .px-#{$key} {
+        padding-left: #{$val}rem;
+        padding-right: #{$val}rem;
+    }
+}
+
+@mixin ul($style, $spacing, $padding, $size, $bg, $color, $hoverbg, $hovercolor) {
+    ul {
+        list-style-type: none;
+
+        li {
+            display: $style;
+
+            &:not(:last-child) {
+                margin-right: $spacing;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: $size;
+                color: $color;
+                background: $bg;
+                padding: $padding;
+                display: flex;
+                transition: color 0.3s linear, background 0.3s linear;
+
+                &:hover {
+                    color: $hovercolor;
+                    background: $hoverbg;
+                }
+
+                &:focus {
+                    outline: none;
+                    color: $color;
+                }
+            }
+        }
+    }
+
+
+}
